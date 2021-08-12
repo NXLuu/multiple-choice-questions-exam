@@ -1,1 +1,10 @@
 ﻿h1 Hello World!!! 
+form(method="POST" action="/users")
+        .from-group
+            label(for="name") Name
+            input#name.form-control(type="text", name="name", value= values ? values.name: "")
+        .from-group
+            label(for="password") Password
+            input#password.form-control(type="password", name="password", value= values ? values.password: "")
+
+        button.btn.btn-primary Login
