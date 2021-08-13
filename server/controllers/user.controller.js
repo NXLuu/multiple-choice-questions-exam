@@ -1,9 +1,9 @@
 ﻿import User from '../models/user.model.js';
+import sha1 from 'sha1';
 
 export async function getUser(req, res) {
     try {
         const users = await User.find();
-        console.log(users);
         res.json(users);
     } catch (err) {
         console.log(err);
@@ -12,10 +12,9 @@ export async function getUser(req, res) {
 
 export async function postUser(req, res) {
     try {
-        console.log(req.body);
         const user = new User({
             name: req.body.name,
-            password: req.body.password
+            password: sha1(req.body.password)
         });
 
         user.save();

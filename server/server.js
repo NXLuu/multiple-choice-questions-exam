@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
 //Database
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) =>{
-        console.log('Connect to Db' + result);
         app.listen(PORT, () => {
             console.log("Ket noi thanh cong "+ PORT);
         });
