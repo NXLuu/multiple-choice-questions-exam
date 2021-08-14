@@ -3,24 +3,27 @@ import './LoginForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { func } from 'prop-types';
 
 export function LoginForm(props) {
     return (
-        <div className="LoginForm">
-            <h1>Login to account</h1>
-            <p>Access to the most powerfull tool in the entire design and web industry.</p>
-            <form>
-                <Input label="E-mail Address" type="text" name="email" />
-                <Input label="Password" type="password" name="password" />
-                <div className="flex">
-                    <SubmitButton />
-                    <div className="flex-item">
-                        <Link message="Register for new account" />
-                    </div>
+        <div className="LoginBackground">
+            <div className="imageHolder">
+                <div className="LoginForm">
+                    <h1>Login to account</h1>
+                    <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                    <form>
+                        <Input label="E-mail Address" type="text" name="email" />
+                        <Input label="Password" type="password" name="password" />
+                        <div className="flex">
+                            <SubmitButton />
+                            <div className="flex-item">
+                                <Link message="Register for new account" />
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
-                
-            </form>
+            </div>
         </div>
     );
 }
