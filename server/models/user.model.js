@@ -1,7 +1,7 @@
 ﻿import mongoose from 'mongoose';
 
 let userSchema = new mongoose.Schema({
-    name: String,
+    email: String,
     password: String,
 },{
     versionKey: false // You should be aware of the outcome after set to false

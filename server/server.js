@@ -1,13 +1,9 @@
 ﻿import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import bodyParser from "body-parser";
-
-
-import userRoute from './routes/user.route.js';
 dotenv.config();
-// require('dotenv').config();
-
+import bodyParser from "body-parser";
+import { initAPIs } from "./api/routes/apj.route.js";
 
 
 const app = express();
@@ -19,11 +15,12 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-app.use('/users', userRoute);
 
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+initAPIs(app);
 
 //Database
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
