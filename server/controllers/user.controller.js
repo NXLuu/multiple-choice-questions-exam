@@ -13,7 +13,7 @@ export async function getUser(req, res) {
 export async function postUser(req, res) {
     try {
         const user = new User({
-            name: req.body.name,
+            email: req.body.email,
             password: sha1(req.body.password)
         });
 
