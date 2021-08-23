@@ -1,0 +1,201 @@
+﻿.HomePage {
+    --featured-img: linear-gradient(180deg, #fff, #262626);
+    background-image: radial-gradient(50% 50% at top center, rgba(0, 0, 0, 0.66), #262626), var(--featured-img);
+    width: 100vw;
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HomeCard {
+    width: 90%;
+    min-height: 85%;
+    background: white;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.HomeImage {
+    background: url('../../asset/img/icon/training.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.HomeParagraph {
+    z-index: 2;
+    /* padding: 6em 2em; */
+    height: fit-content;
+    align-self: center;
+}
+
+.HomeParagraph h1 {
+    font-weight: bolder;
+    font-size: 5em;
+}
+
+.HomeParagraph p {
+    font-size: 1.3em;
+}
+
+.HomeParagraph button {
+    text-align: left;
+    padding: 17px 35px;
+    background-color: #580fdf;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.Wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.Overlay {
+    width: 120%;
+    height: 100%;
+    position: relative;
+    background: rgb(107 92 185);
+}
+
+.SquareHomeDiv {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    position: relative;
+    z-index: 2;
+}
+
+.SquareHomeDiv::before {
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+    position: absolute;
+    mix-blend-mode: screen;
+    opacity: .75;
+    width: 120%;
+    min-height: 500px;
+    height: 100%;
+    z-index: 2;
+}
+
+.SquareHomeDiv::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 68%;
+    height: 100%;
+    top: 0;
+    width: 35%;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .013) 8.1%, hsla(0, 0%, 100%, .049) 15.5%, hsla(0, 0%, 100%, .104) 22.5%, hsla(0, 0%, 100%, .175) 29%, hsla(0, 0%, 100%, .259) 35.3%, hsla(0, 0%, 100%, .352) 41.2%, hsla(0, 0%, 100%, .45) 47.1%, hsla(0, 0%, 100%, .55) 52.9%, hsla(0, 0%, 100%, .648) 58.8%, hsla(0, 0%, 100%, .741) 64.7%, hsla(0, 0%, 100%, .825) 71%, hsla(0, 0%, 100%, .896) 77.5%, hsla(0, 0%, 100%, .951) 84.5%, hsla(0, 0%, 100%, .987) 91.9%, #fff);
+}
+
+.RoundHomeDiv {
+    width: 440px;
+    height: 440px;
+    border-radius: 100%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .HomeParagraph h1 {
+        font-size: 3.5em;
+    }
+
+
+    .RoundHomeDiv {
+        width: 320px;
+        height: 320px;
+    }
+
+}
+
+
+@media only screen and (max-width: 868px) {
+    .HomeParagraph h1 {
+        font-size: 2em;
+    }
+
+    .RoundHomeDiv {
+        width: 200px;
+        height: 200px;
+    }
+
+    .HomeParagraph {
+        font-size: 12px;
+    }
+
+    .HomeCard {
+        grid-template-columns: 1fr;
+    }
+
+    .Overlay {
+        width: 100%;
+        height: 120%;
+    }
+
+    .SquareHomeDiv::before {
+        width: 100%;
+        height: 120%;
+    }
+
+    .SquareHomeDiv::after {
+        height: 96%;
+        top: 140px;
+        width: 100%;
+        left: 0;
+        background: linear-gradient(175deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .013) 8.1%, hsla(0, 0%, 100%, .049) 15.5%, hsla(0, 0%, 100%, .104) 22.5%, hsla(0, 0%, 100%, .175) 29%, hsla(0, 0%, 100%, .259) 35.3%, hsla(0, 0%, 100%, .352) 41.2%, hsla(0, 0%, 100%, .45) 47.1%, hsla(0, 0%, 100%, .55) 52.9%, hsla(0, 0%, 100%, .648) 58.8%, hsla(0, 0%, 100%, .741) 64.7%, hsla(0, 0%, 100%, .825) 71%, hsla(0, 0%, 100%, .896) 77.5%, hsla(0, 0%, 100%, .951) 84.5%, hsla(0, 0%, 100%, .987) 91.9%, #fff);
+    }
+
+
+    .HomeParagraph {
+        padding: 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+
+    .loading-window {
+        width: 212px;
+        height: 108px;
+    }
+
+    .BlueLove {
+        width: 72px;
+        height: 83px;
+        top: -46px;
+        left: -32px;
+    }
+
+    .LoadingPicture {
+        width: 154px;
+        height: 307px;
+        left: 50%;
+        top: -67%;
+        transform: translate(-50%, -50%);
+    }
+
+    .loading-window .text {
+        box-sizing: border-box;
+        font-size: 1.1rem;
+    }
+
+}

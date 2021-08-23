@@ -11,7 +11,7 @@ const refreshTokenLife = process.env.REFRESH_TOKEN_LIFE || '5d';
 const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET || 'refresh-token';
 export async function login(req, res) {
     const { email, password } = req.body;
-
+    console.log(req.body);
     User.findOne({
         'email': email,
         'password': sha1(password)

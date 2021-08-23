@@ -1,0 +1,307 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.QuestionPage {
+    margin-top: 2rem;
+    padding-left: 380px;
+    padding-right: 80px;
+    width: 100%;
+    min-height: 90%;
+    box-sizing: border-box;
+}
+
+.roundDiv {
+    background: blue;
+    border-radius: 0.5rem;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(40deg, #39aeff, #3cff53);
+    /* box-shadow: 0 20px 40px 0 rgb(58 212 173 / 80%); */
+    font-size: 1.5em;
+}
+
+.QuestionPage h1 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    border-radius: 3px;
+    font-family: Montserrat;
+    color: rgb(51, 128, 0);
+    font-weight: bolder;
+    /* padding: 20pxs 0px; */
+    /* text-align: center; */
+    /* box-shadow: rgba(48, 145, 56, 0.4) 0px 30px 90px; */
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(36, 243, 29, 0.23) 0px 3px 6px; */
+}
+
+.ExamText {
+    font-family: Montserrat;
+}
+
+.QuestionPage h3 {
+    /* text-align: center; */
+    font-weight: 600;
+    font-size: 1.3em;
+    margin: 0;
+    display: inline-block;
+    border-bottom: 3px solid rgb(2, 192, 2);
+    padding-bottom: 5px;
+    position: relative;
+    line-height: initial;
+}
+
+.QuestionPage h3 span {
+    color: #78cc6d;
+}
+
+.QuestionPage h3::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: -moz-linear-gradient(-45deg, rgba(46, 202, 127, .15) 0%, rgba(46, 202, 127, .01) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(46, 202, 127, .15) 0%, rgba(46, 202, 127, .01) 100%);
+    background: linear-gradient(135deg, rgba(46, 202, 127, .15) 0%, rgba(46, 202, 127, .01) 100%);
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -khtml-border-radius: 30px;
+}
+
+.Question input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    flex-shrink: 0;
+    font-family: initial;
+}
+
+
+
+input[type=radio]:checked {
+    background: #78cc6d;
+}
+
+input[type=radio]:checked::before {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.Option label {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    word-break: break-all;
+    line-height: 20px;
+    font-size: 1.2em;
+    padding: 10px 0px 10px 5px;
+}
+
+input[type=radio]:checked+label {
+    font-weight: bolder;
+}
+
+
+.Option .check {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    background: #cbd1d8;
+    border-radius: 100%;
+}
+
+.Option .check::before {
+    content: "✔";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Question {
+    margin-bottom: 40px;
+}
+
+.Question input[type=radio]:checked~.check::before {
+    background-color: black;
+}
+
+.input[type=radio]:hover {
+    background: #9faab7;
+    cursor: pointer;
+}
+
+.Option {
+    box-sizing: border-box;
+    padding-left: 25px;
+    position: relative;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+
+}
+
+.Option:hover {
+    cursor: pointer;
+}
+
+.SubmitButton {
+    font-weight: 600;
+    border: solid 2px black;
+    outline: 0;
+    padding: 1rem 4rem;
+    font-size: 1.5em;
+    letter-spacing: 0.08rem;
+    background-color: white;
+    border-radius: 0.35rem;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 100px;
+    margin-top: 10px;
+}
+
+.small {
+    margin: 0;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+.SubmitButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(128, 209, 132);
+    z-index: -1;
+    border-radius: 0.35rem;
+    border: solid 2px black;
+    transition: all 0.3s ease-in-out;
+}
+
+.SubmitButton::after {
+    border: 0;
+    box-shadow: 0px 0px 0px 2px black;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.SubmitButton:hover::after {
+    top: -0.5rem;
+    left: -0.5rem;
+    width: calc(100% + 0.5rem * 2);
+    height: calc(100% + 0.5rem * 2);
+}
+
+@media only screen and (max-width: 968px) {
+    .ControllBar {
+        width: 250px;
+    }
+
+    .QuestionPage {
+        padding-left: 285px;
+        font-size: 15px;
+    }
+
+    .flipClock {
+        display: flex;
+        justify-content: space-between;
+        width: 104px;
+    }
+
+    .ControllBar .UserCard::after {
+        height: 20%;
+    }
+
+    .small {
+        margin: 0;
+        padding: 0.3rem 1.2rem;
+        font-size: 1.2rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+    .ControllBar {
+        width: 250px;
+    }
+
+    .QuestionPage {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .flipClock {
+        display: flex;
+        justify-content: space-between;
+        width: 104px;
+    }
+
+    .ControllBar .UserCard::after {
+        height: 20%;
+    }
+
+    .ControllBar {
+        left: -100%;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .QuestionPage {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
+    }
+
+    .Question input[type=radio] {
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    .flipClock {
+        display: flex;
+        justify-content: space-between;
+        width: 104px;
+    }
+
+    .ControllBar .UserCard::after {
+        height: 20%;
+    }
+
+    .ControllBar {
+        left: -100%;
+    }
+
+}
