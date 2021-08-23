@@ -1,6 +1,7 @@
 ﻿import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
 import bodyParser from "body-parser";
 import { initAPIs } from "./api/routes/apj.route.js";
@@ -10,6 +11,7 @@ const app = express();
 const PORT = 3001;
 const URI = process.env.URI;
 
+app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.use(bodyParser.json()) // for parsing application/json

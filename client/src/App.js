@@ -1,5 +1,5 @@
 import './App.css';
-import { LoginForm } from './Components/LoginForm';
+import { LoginForm } from './Components/Auth/LoginForm';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,32 +11,47 @@ import {
   useHistory,
   withRouter
 } from "react-router-dom";
-import React from 'react';
-import Exam from './Components/Exam';
+import React, { useState, useEffect } from 'react';
+import Exam from './Components/Exam/Exam.js';
+import SubmitButton from './Components/Exam/SubmitButton';
+import MenuExam from './Components/MenuExam/MenuExam';
+import MenuExamSwitch from './Components/MenuExam/MenuExam';
+import Loading from './Components/LoadingPage/Loading';
+import NavCustom from './Components/NavBar';
+import useToken from './CustomHook/useToken';
+import Home from './Components/Home/Home';
+import PrivateRoute from './Components/Auth/PrivateRoute';
+
+
+export const TokenContext = React.createContext();
 
 function App() {
+
+  const { token, setToken } = useToken();
+  const [freshToken, setFreshToken] = useState();
+  const history = useHistory();
+
+  
+
+  // if (!token)
+  //   return (
+  //     <div>
+  //       <Router>
+  //         <NavCustom />
+  //         <Switch>
+  //           <Route exact path="/">
+  //             <Home />
+  //           </Route>
+  //         </Switch>
+  //       </Router>
+  //       <LoginForm setToken={setToken} setFreshToken={setFreshToken} />
+  //     </div>);
+
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/exam">Exam</Link>
-            </li>
-            <li>
-              <Link to="/about?name=luu&id=luu">About</Link>
-            </li>
-            <li>
-              <Link to="/404">Not Found</Link>
-            </li>
-          </ul>
-        </nav>
+
+    <TokenContext.Provider value={{ token, freshToken, setToken, setFreshToken }}>
+      <Router>
+        <NavCustom />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -45,53 +60,21 @@ function App() {
             <LoginForm />
           </Route>
           <Route path="/about">
-            <About />
+            <Loading />
           </Route>
-          <Route path="/exam">
-            <Exam  />
-          </Route>
+          <PrivateRoute path="/exam">
+            <MenuExamSwitch />
+          </PrivateRoute>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </TokenContext.Provider>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  let location = useLocation();
-  console.log(location);
-
-  let match = useRouteMatch();
-  console.log(match);
-
-  let query = new URLSearchParams(location.search);
-
-  return <h2>About {query.get('name')} - {query.get('id')}</h2>;
-}
-
-// function Users() {
-//   let { name, id } = useParams();
-
-//   return <h2>Users {name} - {id}</h2>;
-// }
-
-// class Users extends React.Component {
-
-//   render() {
-//     let { match } = this.props;
-//     console.log(match.params);
-//     let {name , id} = match.params;
-//     return <h2>Users {name} - {id}</h2>;
-//   }
-// }
-
-// const UsersWithClassRouter = withRouter(Users);
 
 function NotFound() {
   let location = useLocation();
@@ -105,22 +88,9 @@ function NotFound() {
   return (
     <div>
       <h2>{match.path}404 Not Found</h2>;
-      <button onClick={() => {history.goBack()}} >back</button>
+      <button onClick={() => { history.goBack() }} >back</button>
     </div>
   );
 }
-// class NotFound extends React.Component {
-//   render() {
-//     let {location, history, match} = this.props;
-//     return (
-//       <div>
-//         <h2>{match.path}404 Not Found</h2>;
-//         <button onClick={() => { history.goBack() }} >back</button>
-//       </div>
-//     )
-//   };
-// }
-
-// const NotFountClassWithRouter = withRouter(NotFound);
 
 export default App;

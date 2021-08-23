@@ -40,4 +40,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    document.onscroll = (e) => {
+      let controllBar = document.querySelector('.ControllBar');
+      if (!controllBar) return;
+      console.log(controllBar);
+      console.log(window.pageYOffset);
+      let newTop = 56 - window.pageYOffset;
+      if ( newTop < 0 ) newTop = 0;
+      controllBar.style.top = newTop + 'px';
+    }
+  </script>
 </html>

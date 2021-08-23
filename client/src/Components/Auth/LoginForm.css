@@ -8,7 +8,7 @@
 }
 
 .LoginBackground .imageHolder {
-    background-image: url('../asset/img/login/background.svg');
+    background-image: url('../../asset/img/login/background.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
