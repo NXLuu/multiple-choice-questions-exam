@@ -1,4 +1,4 @@
-﻿import {verifyToken} from '../helpers/jwt.helper.js';
+﻿import { verifyToken } from '../helpers/jwt.helper.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -12,11 +12,13 @@ export let isAuth = async (req, res, next) => {
             debugger;
             const decoded = await verifyToken(tokenFromClient, accessTokenSecret);
             req.jwtDecoded = decoded;
+            console.log(decoded);
+            res.locals.userId = decoded.data._id;
             next();
         } catch (error) {
-           return res.status(401).json({
-               message: 'Unauthorized',
-           });
+            return res.status(401).json({
+                message: 'Unauthorized',
+            });
         }
     }
     else {

@@ -5,11 +5,12 @@ import cors from 'cors';
 dotenv.config();
 import bodyParser from "body-parser";
 import { initAPIs } from "./api/routes/apj.route.js";
-
+import multer from "multer";
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const URI = process.env.URI;
+export const upload = multer({dest: './public/uploads'});
 
 app.use(cors());
 app.use(express.static('public'));

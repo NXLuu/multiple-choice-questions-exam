@@ -5,7 +5,6 @@ import Question from "../../models/qestion.model.js";
 // import { ObjectID } from "bson";
 
 export async function getExam(req, res) {
-    
     try {
         const allExams = await Exam.find({}).exec();
         const allExamsWithOnlyNumberOfQuestions = allExams.map((exam) => {

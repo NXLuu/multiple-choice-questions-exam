@@ -4,8 +4,6 @@ export let generateToken = (user, secretSignature, tokenLife) => {
     return new Promise((res, rej) => {
         const userData = {
             _id: user._id.toString(),
-            name: user.name,
-            password: user.password
         }
 
         jwt.sign(
