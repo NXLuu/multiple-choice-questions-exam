@@ -1,0 +1,127 @@
+﻿.LoginBackground {
+    width: 100%;
+    height: 100vh;
+    background-color:#A06DF2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginBackground .imageHolder {
+    background-image: url('../../asset/img/login/background.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm {
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 1rem;
+    max-width: 400px;
+    max-height: 700px;
+    min-height: 500px;
+    border-radius: 7px;
+}
+
+.LoginForm form {
+    width: 100%;
+    color: #8F938D;
+    text-align: left;
+    position: relative;
+}
+
+.LoginForm label {
+    text-align: left;
+    width: 100%;
+}
+
+.LoginForm label input {
+    color: black;
+    outline: none;
+    border: 0;
+    margin: 0;
+    height: 50px;
+    display: block;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+    flex-grow: 2;
+    background-color: rgba(255, 255, 255, 0.247);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.LoginForm .icon {
+    /* color: white; */
+    font-size: 1rem;
+    position: absolute;
+    top: 49%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.LoginForm .inputIcon {
+    margin-top: 15px;
+    position: relative;
+}
+
+.LoginForm input:focus {
+    background-color: #F0F0F0;
+
+}
+
+.LoginForm input[type="submit"] {
+    text-align: left;
+    padding: 17px 35px;
+    background-color: #57D38C;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+
+.LoginForm input[type="submit"]:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 10px #c5fcdc;
+}
+
+.LoginForm .flex-item {
+    flex-grow: 2;
+    text-align: center;
+}
+
+.LoginForm a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    border-bottom: 1px black solid;
+    transition: all 0.2s;
+}
+
+.LoginForm a:hover {
+    border-bottom: 4px #57D38C solid;
+}
+
+
+.LoginForm .flex {
+    display: flex;
+    align-items: baseline;
+}
